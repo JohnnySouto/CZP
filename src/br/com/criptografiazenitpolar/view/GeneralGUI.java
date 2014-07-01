@@ -132,7 +132,6 @@ public final class GeneralGUI extends JFrame {
             .addGroup(grpLayout.createParallelGroup(LEADING)
                 .addComponent(lbMensagemOriginal)
                 .addComponent(lbMensagemCriptografada)
-                //.addGroup(grpLayout.createParallelGroup(LEADING)
                 .addComponent(clipboardButton))
             .addGroup(grpLayout.createParallelGroup(LEADING)
                 .addComponent(tfOriginal)
