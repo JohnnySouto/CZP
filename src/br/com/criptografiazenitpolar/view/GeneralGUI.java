@@ -19,6 +19,8 @@ public final class GeneralGUI extends JFrame {
     private String txtOriginal;
     private String txtCriptografada;
     private String txtTemp;
+    private final char[] valorLetraOriginal = {'z','e','n','i','t','p','o','l','a','r','Z','E','N','I','T','P','O','L','A','R'};
+    private final char[] valorLetraCriptografada = {'p','o','l','a','r','z','e','n','i','t','P','O','L','A','R','Z','E','N','I','T'};
     private char[] arrayTxtOriginal;
     private char[] arrayTxtCriptografada;
     private JLabel lbMensagemOriginal;
@@ -35,10 +37,26 @@ public final class GeneralGUI extends JFrame {
     
     public void criptografarMensagemActionPerformed(ActionEvent evt){
         
-        txtCriptografada = tfOriginal.getText().toLowerCase();
+        txtCriptografada = tfOriginal.getText();
         
         arrayTxtOriginal = txtCriptografada.toCharArray();
         
+        for (int i = 0; i < arrayTxtOriginal.length; i++) {
+            for (int j = 0; j < valorLetraOriginal.length; j++) {
+                char o = valorLetraOriginal[j];
+                    for (int k = 0; k < valorLetraCriptografada.length; k++) {
+                    char s = valorLetraCriptografada[k];
+                        if(arrayTxtOriginal[i]==o){
+                            arrayTxtOriginal[i]=s;
+                        }
+                    
+                }
+            }
+            
+        }
+        //txtCriptografar = String.valueOf(newTxtCriptografado);
+        
+        /*
         for (int i = 0; i < arrayTxtOriginal.length; i++) {
             if (arrayTxtOriginal[i] == 'a') {
                 arrayTxtOriginal[i] = 'i';
@@ -62,7 +80,7 @@ public final class GeneralGUI extends JFrame {
                                                                                     arrayTxtOriginal[i] = 'p';
                                                                                     }
         }
-        
+        */
         txtCriptografada = String.valueOf(arrayTxtOriginal);
         
         tfCriptografada.setText(txtCriptografada);
