@@ -42,19 +42,12 @@ public final class GeneralGUI extends JFrame {
         arrayTxtOriginal = txtCriptografada.toCharArray();
         
         for (int i = 0; i < arrayTxtOriginal.length; i++) {
-            for (int j = 0; j < valorLetraOriginal.length; j++) {
-                char o = valorLetraOriginal[j];
-                    for (int k = 0; k < valorLetraCriptografada.length; k++) {
-                    char s = valorLetraCriptografada[k];
-                        if(arrayTxtOriginal[i]==o){
-                            arrayTxtOriginal[i]=s;
-                        }
-                    
+            for (int j = 0; j < 10; j++) {
+                if(arrayTxtOriginal[i]==valorLetraOriginal[j]){
+                    arrayTxtOriginal[i]=valorLetraCriptografada[j];
                 }
             }
-            
         }
-        //txtCriptografar = String.valueOf(newTxtCriptografado);
         
         /*
         for (int i = 0; i < arrayTxtOriginal.length; i++) {
