@@ -41,7 +41,6 @@ public final class GeneralGUI extends JFrame {
         
         arrayTxtOriginal = txtCriptografada.toCharArray();
         
-        
         for (int i = 0; i < arrayTxtOriginal.length; i++) {
             for (int j = 0; j < 20; j++) {
                 if(arrayTxtOriginal[i]==valorLetraOriginal[j]){
