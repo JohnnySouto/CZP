@@ -41,39 +41,16 @@ public final class GeneralGUI extends JFrame {
         
         arrayTxtOriginal = txtCriptografada.toCharArray();
         
+        
         for (int i = 0; i < arrayTxtOriginal.length; i++) {
-            for (int j = 0; j < 10; j++) {
+            for (int j = 0; j < 20; j++) {
                 if(arrayTxtOriginal[i]==valorLetraOriginal[j]){
                     arrayTxtOriginal[i]=valorLetraCriptografada[j];
+                    break;
                 }
             }
         }
-        
-        /*
-        for (int i = 0; i < arrayTxtOriginal.length; i++) {
-            if (arrayTxtOriginal[i] == 'a') {
-                arrayTxtOriginal[i] = 'i';
-            } else if (arrayTxtOriginal[i] == 'e') {
-                    arrayTxtOriginal[i] = 'o';
-                    } else if (arrayTxtOriginal[i] == 'i') {
-                            arrayTxtOriginal[i] = 'a';
-                            } else if (arrayTxtOriginal[i] == 'l') {
-                                    arrayTxtOriginal[i] = 'n';
-                                    } else if (arrayTxtOriginal[i] == 'n') {
-                                            arrayTxtOriginal[i] = 'l';
-                                            } else if (arrayTxtOriginal[i] == 'o') {
-                                                    arrayTxtOriginal[i] = 'e';
-                                                    } else if (arrayTxtOriginal[i] == 'p') {
-                                                            arrayTxtOriginal[i] = 'z';
-                                                            } else if (arrayTxtOriginal[i] == 'r') {
-                                                                    arrayTxtOriginal[i] = 't';
-                                                                    } else if (arrayTxtOriginal[i] == 't') {
-                                                                            arrayTxtOriginal[i] = 'r';
-                                                                            } else if (arrayTxtOriginal[i] == 'z') {
-                                                                                    arrayTxtOriginal[i] = 'p';
-                                                                                    }
-        }
-        */
+ 
         txtCriptografada = String.valueOf(arrayTxtOriginal);
         
         tfCriptografada.setText(txtCriptografada);
@@ -82,32 +59,17 @@ public final class GeneralGUI extends JFrame {
     public void desCriptografarMensagemActionPerformed(ActionEvent evt){
         
         
-        txtOriginal = tfCriptografada.getText().toLowerCase();
+        txtOriginal = tfCriptografada.getText();
         
         arrayTxtCriptografada = txtOriginal.toCharArray();
         
         for (int i = 0; i < arrayTxtCriptografada.length; i++) {
-            if (arrayTxtCriptografada[i] == 'i') {
-                arrayTxtCriptografada[i] = 'a';
-            } else if (arrayTxtCriptografada[i] == 'o') {
-                    arrayTxtCriptografada[i] = 'e';
-                    } else if (arrayTxtCriptografada[i] == 'a') {
-                            arrayTxtCriptografada[i] = 'i';
-                            } else if (arrayTxtCriptografada[i] == 'n') {
-                                    arrayTxtCriptografada[i] = 'l';
-                                    } else if (arrayTxtCriptografada[i] == 'l') {
-                                            arrayTxtCriptografada[i] = 'n';
-                                            } else if (arrayTxtCriptografada[i] == 'e') {
-                                                    arrayTxtCriptografada[i] = 'o';
-                                                    } else if (arrayTxtCriptografada[i] == 'z') {
-                                                            arrayTxtCriptografada[i] = 'p';
-                                                            } else if (arrayTxtCriptografada[i] == 't') {
-                                                                    arrayTxtCriptografada[i] = 'r';
-                                                                    } else if (arrayTxtCriptografada[i] == 'r') {
-                                                                            arrayTxtCriptografada[i] = 't';
-                                                                            } else if (arrayTxtCriptografada[i] == 'p') {
-                                                                                    arrayTxtCriptografada[i] = 'z';
-                                                                                    }
+            for (int j = 0; j < 20; j++) {
+                if(arrayTxtCriptografada[i]==valorLetraCriptografada[j]){
+                    arrayTxtCriptografada[i]=valorLetraOriginal[j];
+                    break;
+                }
+            }
         }
         
         txtOriginal = String.valueOf(arrayTxtCriptografada);
