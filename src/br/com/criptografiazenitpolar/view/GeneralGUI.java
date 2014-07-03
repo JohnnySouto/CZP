@@ -13,6 +13,7 @@ import static java.awt.EventQueue.invokeLater;
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
+import br.com.criptografiazenitpolar.controller.CriptografiaZP;
 
 public final class GeneralGUI extends JFrame {
     
@@ -37,41 +38,22 @@ public final class GeneralGUI extends JFrame {
     
     public void criptografarMensagemActionPerformed(ActionEvent evt){
         
-        txtCriptografada = tfOriginal.getText();
+        CriptografiaZP msgCripto = new CriptografiaZP();
         
-        arrayTxtOriginal = txtCriptografada.toCharArray();
-        
-        for (int i = 0; i < arrayTxtOriginal.length; i++) {
-            for (int j = 0; j < 20; j++) {
-                if(arrayTxtOriginal[i]==valorLetraOriginal[j]){
-                    arrayTxtOriginal[i]=valorLetraCriptografada[j];
-                    break;
-                }
-            }
-        }
+        msgCripto.CriptografarMensagem(tfCriptografada.getText());
  
-        txtCriptografada = String.valueOf(arrayTxtOriginal);
+        txtCriptografada = String.valueOf(msgCripto);
         
         tfCriptografada.setText(txtCriptografada);
     }
     
     public void desCriptografarMensagemActionPerformed(ActionEvent evt){
         
+        CriptografiaZP msgDesCripto = new CriptografiaZP();
         
-        txtOriginal = tfCriptografada.getText();
+        msgDesCripto.DesCriptografarMensagem(tfOriginal.getText());
         
-        arrayTxtCriptografada = txtOriginal.toCharArray();
-        
-        for (int i = 0; i < arrayTxtCriptografada.length; i++) {
-            for (int j = 0; j < 20; j++) {
-                if(arrayTxtCriptografada[i]==valorLetraCriptografada[j]){
-                    arrayTxtCriptografada[i]=valorLetraOriginal[j];
-                    break;
-                }
-            }
-        }
-        
-        txtOriginal = String.valueOf(arrayTxtCriptografada);
+        txtOriginal = String.valueOf(msgDesCripto);
         
         tfOriginal.setText(txtOriginal);
     }
