@@ -20,10 +20,6 @@ public final class GeneralGUI extends JFrame {
     private String txtOriginal;
     private String txtCriptografada;
     private String txtTemp;
-    private final char[] valorLetraOriginal = {'z','e','n','i','t','p','o','l','a','r','Z','E','N','I','T','P','O','L','A','R'};
-    private final char[] valorLetraCriptografada = {'p','o','l','a','r','z','e','n','i','t','P','O','L','A','R','Z','E','N','I','T'};
-    private char[] arrayTxtOriginal;
-    private char[] arrayTxtCriptografada;
     private JLabel lbMensagemOriginal;
     private JLabel lbMensagemCriptografada;
     private JTextField tfOriginal;
@@ -39,7 +35,7 @@ public final class GeneralGUI extends JFrame {
     public void criptografarMensagemActionPerformed(ActionEvent evt){
         
         CriptografiaZP msgCripto = new CriptografiaZP();
-        
+               
         msgCripto.CriptografarMensagem(tfCriptografada.getText());
  
         txtCriptografada = String.valueOf(msgCripto);
