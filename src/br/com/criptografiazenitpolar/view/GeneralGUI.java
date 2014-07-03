@@ -34,9 +34,24 @@ public final class GeneralGUI extends JFrame {
     
     public void criptografarMensagemActionPerformed(ActionEvent evt){
         
+<<<<<<< HEAD
         CriptografiaZP msgCripto = new CriptografiaZP();
                
         msgCripto.CriptografarMensagem(tfCriptografada.getText());
+=======
+        txtCriptografada = tfOriginal.getText();
+        
+        arrayTxtOriginal = txtCriptografada.toCharArray();
+        
+        for (int i = 0; i < arrayTxtOriginal.length; i++) {
+            for (int j = 0; j < 20; j++) {
+                if(arrayTxtOriginal[i]==valorLetraOriginal[j]){
+                    arrayTxtOriginal[i]=valorLetraCriptografada[j];
+                    break;
+                }
+            }
+        }
+>>>>>>> 39fd34eca65439f2c090d76e347b39bf4b19783c
  
         txtCriptografada = String.valueOf(msgCripto);
         
