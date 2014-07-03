@@ -7,8 +7,8 @@ package br.com.criptografiazenitpolar.controller;
 
 public interface ICriptografiaZP {
     
-    public String CriptografarMensagem();
+    public void CriptografarMensagem(String newTxtCriptografado);
     
-    public String DesCriptografarMensagem();
+    public void DesCriptografarMensagem(String newTxtDesCriptografado);
     
 }
