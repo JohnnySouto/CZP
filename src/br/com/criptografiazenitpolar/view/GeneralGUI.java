@@ -33,7 +33,6 @@ public final class GeneralGUI extends JFrame {
     }
     
     public void criptografarMensagemActionPerformed(ActionEvent evt){
-        
 
         CriptografiaZP msgCripto = new CriptografiaZP();
                
